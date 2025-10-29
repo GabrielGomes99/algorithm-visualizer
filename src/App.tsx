@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import AlgorithmVisualizations from './components/AlgorithmVisualizations';
 import ArvoreDiagramas from './components/ArvoreDiagramas';
 import { BookOpen, TreePine, Home } from 'lucide-react';

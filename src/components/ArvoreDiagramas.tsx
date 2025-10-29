@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Play, Pause, RotateCcw, ChevronRight, Calculator, Briefcase, GitBranch, Zap } from 'lucide-react';
+import { useState } from 'react';
+import { RotateCcw, Calculator, Briefcase, GitBranch, Zap } from 'lucide-react';
 
 const ArvoreDiagramas = () => {
   const [algoritmoAtivo, setAlgoritmoAtivo] = useState('fibonacci');

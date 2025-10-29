@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { ArrowRight, GitBranch, Layers, Zap, Database, TrendingUp, ListTree, Binary } from 'lucide-react';
+import { useState } from 'react';
+import { ArrowRight, GitBranch, Layers, Database, TrendingUp, ListTree } from 'lucide-react';
 
 const AlgorithmVisualizations = () => {
   const [activeTab, setActiveTab] = useState('merge');
