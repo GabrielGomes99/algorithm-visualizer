@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import AlgorithmVisualizations from './components/AlgorithmVisualizations';
 import ArvoreDiagramas from './components/ArvoreDiagramas';
-import { BookOpen, TreePine, Home } from 'lucide-react';
+import EstruturaDadosJava from './components/EstruturaDadosJava';
+import { BookOpen, TreePine, Home, Coffee } from 'lucide-react';
 
 function App() {
   const [currentView, setCurrentView] = useState('home');
@@ -12,6 +13,8 @@ function App() {
         return <AlgorithmVisualizations />;
       case 'advanced':
         return <ArvoreDiagramas />;
+      case 'java':
+        return <EstruturaDadosJava />;
       default:
         return <HomePage setCurrentView={setCurrentView} />;
     }
@@ -54,6 +57,17 @@ function App() {
                 <TreePine size={18} />
                 Avançado
               </button>
+              <button
+                onClick={() => setCurrentView('java')}
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${
+                  currentView === 'java'
+                    ? 'bg-orange-600 text-white'
+                    : 'bg-slate-200 text-slate-700 hover:bg-slate-300'
+                }`}
+              >
+                <Coffee size={18} />
+                Java
+              </button>
             </div>
           </div>
         </nav>
@@ -78,7 +92,7 @@ const HomePage = ({ setCurrentView }: { setCurrentView: (view: string) => void }
           Explore complexidade computacional com visualizações interativas
         </p>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
+        <div className="grid md:grid-cols-3 gap-6 mb-12">
           <div
             onClick={() => setCurrentView('basic')}
             className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all cursor-pointer transform hover:scale-105 border-2 border-blue-200 hover:border-blue-400"
@@ -116,6 +130,25 @@ const HomePage = ({ setCurrentView }: { setCurrentView: (view: string) => void }
               <li>• Árvore de decisão 2^n</li>
               <li>• Casos de uso no mundo real</li>
               <li>• Google, GPS, Criptografia</li>
+            </ul>
+          </div>
+
+          <div
+            onClick={() => setCurrentView('java')}
+            className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all cursor-pointer transform hover:scale-105 border-2 border-orange-200 hover:border-orange-400"
+          >
+            <div className="text-orange-600 mb-4">
+              <Coffee size={64} className="mx-auto" />
+            </div>
+            <h2 className="text-2xl font-bold text-slate-800 mb-3">Estruturas de Dados Java</h2>
+            <p className="text-slate-600 mb-4">
+              Arrays, árvores binárias e recursão com código Java
+            </p>
+            <ul className="text-sm text-slate-500 space-y-1">
+              <li>• Arrays e operações básicas</li>
+              <li>• Árvore binária de busca</li>
+              <li>• Recursão com visualização</li>
+              <li>• Código Java completo</li>
             </ul>
           </div>
         </div>
